@@ -1,0 +1,12 @@
+# Build Artifacts
+/build/*
+/dist/*
+/docs/*
+
+# Demos, scripts, misc
+/node_modules/*
+/demos/*
+CHANGELOG.md
+PULL_REQUEST_TEMPLATE.md
+/.github/
+/helm/

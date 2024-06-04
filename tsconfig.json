@@ -1,0 +1,60 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "dist",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "importHelpers": false,
+    "target": "es2021",
+    "module": "commonjs",
+    "lib": [
+      "esnext"
+    ],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@interfaces/*": [
+        "./stage/interfaces/*"
+      ],
+      "@controllers/*": [
+        "./stage/controllers/*"
+      ],
+      "@utilities": [
+        "./stage/utilities/index.ts"
+      ],
+      "@config": [
+        "./stage/config/index.ts"
+      ],
+      "@constants": [
+        "./stage/constants/index.ts"
+      ],
+      "@validators": [
+        "./stage/validators/index.ts"
+      ]
+    },
+    "typeRoots": [
+      "./node_modules/@types/"
+    ],
+    "resolveJsonModule": true
+  },
+  "ts-node": {
+    // Do not forget to `npm i -D tsconfig-paths`
+    "require": [
+      "tsconfig-paths/register"
+    ],
+    "files": true
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
+}

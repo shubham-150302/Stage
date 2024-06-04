@@ -1,0 +1,16 @@
+node_modules
+.tmp
+.DS_Store
+.env
+certs/
+docs/
+artifacts/
+.cache/
+stripe_test/
+.env.*
+nodemon.json
+.vscode/configurationCache.log
+.vscode/dryrun.log
+.vscode/targets.log
+logs/
+dist/

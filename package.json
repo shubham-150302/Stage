@@ -1,0 +1,71 @@
+{
+  "name": "stage",
+  "description": "Stage APIs",
+  "version": "1.0.0",
+  "license": "RDPL",
+  "engines": {
+    "npm": ">=10.2.3 <=10.5.0",
+    "node": ">=18.19.0 <=21.7.1"
+  },
+  "scripts": {
+    "build": "tsc && tsc-alias",
+    "start": "node ./dist/bin/run.js --server",
+    "dev": "nodemon --exec ts-node bin/run.ts --server",
+    "migrate:dev": "knex --env development migrate:latest",
+    "migrate:staging": "knex --env staging migrate:latest",
+    "migrate:production": "knex --env production migrate:latest",
+    "lint:check": "eslint . --ext .ts",
+    "lint:fix": "eslint . --fix --ext .ts",
+    "prettier:check": "prettier . --check",
+    "prettier:fix": "prettier . --write",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@hapi/glue": "^9.0.1",
+    "@hapi/hapi": "^21.3.2",
+    "@hapi/joi-date": "^2.0.1",
+    "@hapipal/haute-couture": "^4.3.1",
+    "@hapipal/schmervice": "^3.0.0",
+    "@hapipal/schwifty": "git+https://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:git@github.com:shubham-150302/shwifty.git",
+    "@hapipal/toys": "^4.0.0",
+    "dd-trace": "^5.0.0",
+    "dotenv": "^16.3.2",
+    "exiting": "^6.1.0",
+    "joi": "^17.12.0",
+    "knex": "^3.1.0",
+    "luxon": "^3.4.4",
+    "minimist": "^1.2.8",
+    "mysql2": "^3.7.1",
+    "objection": "^3.1.3"
+  },
+  "devDependencies": {
+    "@types/hapi__glue": "^6.1.9",
+    "@hapipal/types-haute-couture": "^0.0.1-alpha.1",
+    "@types/luxon": "^3.4.1",
+    "@types/minimist": "^1.2.5",
+    "@types/mysql": "^2.15.25",
+    "@types/node": "^20.11.5",
+    "@types/uuid": "^9.0.7",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "nodemon": "^3.0.3",
+    "prettier": "^3.2.4",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.3.3",
+    "tsc-alias": "^1.8.8",
+    "eslint-config-prettier": "^9.1.0"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "npm run prettier:check",
+      "npm run lint:check"
+    ]
+  }
+}
